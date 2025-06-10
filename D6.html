@@ -167,15 +167,25 @@
         h1.style.cursor = "pointer";
         const stringa = h1.textContent;
         const stringaRidotta = stringa.slice(0, -1);
-
         h1.innerText = stringaRidotta;
       };
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
-
-      const revealFooterLink = function () {};
+      const addClickableFooter = function () {
+        const footer = document.querySelector("footer");
+        footer.setAttribute("onclick", "revealFooterLink()");
+        footer.style.cursor = "pointer";
+      };
+      addClickableFooter();
+      const revealFooterLink = function () {
+        const footer = document.querySelector("footer");
+        const a = document.querySelector("footer a");
+        alert(
+          "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
+        );
+      };
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
