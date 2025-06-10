@@ -189,14 +189,26 @@
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
-
-      const generateTable = function () {};
+      const generateTable = function () {
+        const tableArea = document.getElementById("tableArea");
+        tableArea.innerHTML +=
+          "<table><tr><th>Immagine</th><th>Nome prodotto</th><th>Quantità</th><th>Prezzo</th></tr></table>";
+        const table = document.querySelector("table");
+        table.style.border = "solid";
+        table.style.textAlign = "center";
+      };
+      generateTable();
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
-
-      const addRow = function () {};
+      const addRow = function (image, prodotto, prezzo, quantità) {
+        const table = document.querySelector("table");
+        table.innerHTML += `<tr><td><img src="${image}"></td><td>${prodotto}</td><td>${prezzo}</td><td>${quantità}</td></tr>`;
+      };
+      addRow("https://placebear.com/100/100", "Orso1", 300, 1);
+      addRow("https://placebear.com/100/101", "Orso2", 100, 7);
+      addRow("https://placebear.com/102/100", "Orso3", 600, 1);
 
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
