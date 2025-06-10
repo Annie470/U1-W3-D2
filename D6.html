@@ -213,7 +213,6 @@
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
       */
-
       const hideAllImages = function () {
         const imgHidden = document.querySelectorAll("td img");
         imgHidden.forEach((img) => {
@@ -231,8 +230,25 @@
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
+      const getRandomColor = function () {
+        const r = Math.ceil(Math.random() * 255);
+        const g = Math.ceil(Math.random() * 255);
+        const b = Math.ceil(Math.random() * 255);
+        const newRGB = `rgb(${r},${g}, ${b})`;
+        return newRGB;
+      };
 
-      const changeColorWithRandom = function () {};
+      const changeColorWithRandom = function () {
+        const h2 = document.getElementById("changeMyColor");
+        h2.style.color = getRandomColor();
+      };
+
+      const addClickableH2 = function () {
+        const h2 = document.getElementById("changeMyColor");
+        h2.setAttribute("onclick", "changeColorWithRandom()");
+        h2.style.cursor = "pointer";
+      };
+      addClickableH2();
     </script>
   </body>
 </html>
