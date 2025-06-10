@@ -112,14 +112,22 @@
       /* ESERCIZIO 4
          Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
         */
-
-      const changeUrls = function () {};
+      const changeUrls = function () {
+        const divA = document.querySelectorAll("div a:not(footer a)");
+        divA.forEach((a) => {
+          a.setAttribute("href", "https://www.google.com");
+        });
+      };
+      changeUrls();
 
       /* ESERCIZIO 5
          Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
       */
-
-      const addToTheSecond = function () {};
+      const addToTheSecond = function () {
+        const secondUl = document.querySelector("ul + ul");
+        secondUl.innerHTML += "<li>4th</li>";
+      };
+      addToTheSecond();
 
       /* ESERCIZIO 6
          Scrivi una funzione che aggiunga un paragrafo al primo div
